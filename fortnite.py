@@ -42,7 +42,12 @@ intro = Fore.LIGHTGREEN_EX + """
 SVAXYY LOBBY BOT
 """
 
+werbung = Fore.YELLOW + """
+Instagram: lenny.hii \nTwitter: akamauru \nDiscord: Queen Svaxyy#4598
+"""
+
 print(intro)
+print(werbung)
 
 
 async def start_discord_rich_presence() -> None:
@@ -54,7 +59,8 @@ async def start_discord_rich_presence() -> None:
     try:
         await rpc.connect()
     except Exception as discord_error:
-        print(f'There was an error: {discord_error}.')
+        print(f'There was an error: \n{discord_error}.')
+        print(Fore.GREEN + ' [Discord Error] ' + Fore.LIGHTRED_EX + 'discord status isnt custom restart discord & the bot also')
 
     while True:
         try:
@@ -66,14 +72,14 @@ async def start_discord_rich_presence() -> None:
 
         await rpc.update(
             details=f"epic: {client.user.display_name}",
-            state=(data['state']),
+            state=f"state",
             large_image="vbucks",
-            large_text=(data['large_text']),
+            large_text="small_text",
             small_image="punkt",
-            small_text=(data['small_text']),
-            start=int(start_time),
+            small_text="small_text",
+            start=132438838700000000,
             party_id=client.party.id,
-            party_size=[client.party.member_count, (data['client_max_dc_count']),],
+            party_size=[client.party.member_count, 100],
             join=uuid.uuid4().hex
         )
 
@@ -81,9 +87,6 @@ async def start_discord_rich_presence() -> None:
 
 fortnite_api = FortniteAPIAsync.APIClient()
 
-
-def time() -> str:
-    return datetime.datetime.now().strftime('%H:%M:%S')
 
 
 def lenPartyMembers():
@@ -176,7 +179,7 @@ def check_if_process_running(name: str) -> bool:
 
 device_auth_details = get_device_auth_details().get(data['email'], {})
 
-prefix = (data['prefix'])
+prefix = '!'
 
 client = commands.Bot(
     command_prefix=prefix,
@@ -195,8 +198,7 @@ client = commands.Bot(
 
 @client.event
 async def event_party_member_join(member: fortnitepy.PartyMember) -> None:
-    await BenBotAsync.set_default_loadout(client, data, member)
-    await client.party.send(data['joinmessage'])
+    await client.party.send(f"Welcome {member.display_name}. \nI'm a Lobby Bot by Svaxyy. \nDiscord: https://discord.gg/fQB9jju . \nINSTAGRAM: lenny.hii \nTWITTER: akamauru \nYOUTUBE: svaxyy")
 
 
 @client.event
@@ -216,13 +218,16 @@ async def event_ready() -> None:
     os.system('cls||clear')
     print(intro)
     print(Fore.GREEN + ' [+] ' + Fore.RESET + 'Client ready as ' + Fore.LIGHTGREEN_EX + f'{client.user.display_name}')
-
     discord_exists = await client.loop.run_in_executor(None, check_if_process_running, 'Discord')
 
     if discord_exists:
         client.loop.create_task(start_discord_rich_presence())
         pass
 
+
+        print(Fore.GREEN + ' [Discord Error] ' + Fore.LIGHTBLUE_EX + 'if discord status isnt custom restart discord & the bot also')
+        print(Fore.GREEN + ' [Discord] ' + Fore.LIGHTBLUE_EX + 'discord status complete')
+        print(Fore.LIGHTGREEN_EX + ' [!info!] ' + Fore.YELLOW + 'for joinmessage, custom commands, ... dm @lenny.hii on INSTAGRAM')
 
     member = client.party.me
 
