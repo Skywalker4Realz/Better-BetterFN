@@ -15,11 +15,6 @@
     "prefix": "!",
 
 
-    "joinmessage": "Welcome {member.display_name}. \nI'm a Lobby Bot by Svaxyy. \nDiscord: https://discord.gg/fQB9jju . \nINSTAGRAM: lenny.hii \nTWITTER: akamauru \nYOUTUBE: svaxyy",
-
-
-    "state": "free bot",
-    "large_text": "TWITTER: akamauru",
-    "small_text": "IG: lenny.hii for OWN BOT",
-    "client_max_dc_count": "16"
+    "joinmessage": "Welcome {member.display_name}. \nI'm a Lobby Bot by Svaxyy. \nDiscord: https://discord.gg/fQB9jju . \nINSTAGRAM: lenny.hii \nTWITTER: akamauru \nYOUTUBE: svaxyy"
 }
+    
