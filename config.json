@@ -1,0 +1,25 @@
+{
+    "email": "youremail",
+    "password": "yourpassword",
+    "cid": "cid_822_athena_commando_f_angler",
+    "pid": "Pickaxe_Lockjaw",
+    "banner": "otherbanner28",
+    "banner_color": "defaultcolor22",
+    "level": "999",
+    "bp_tier": "999",
+    "status": "{party_size} / {party_max_size} Lobby Bot",
+    "platform": "WIN",
+    "friendaccept": "True",
+    "joinoninvite": "false",
+    "AdminPassword": "1110",
+    "prefix": "!",
+
+
+    "joinmessage": "Welcome {member.display_name}. \nI'm a Lobby Bot by Svaxyy. \nDiscord: https://discord.gg/fQB9jju . \nINSTAGRAM: lenny.hii \nTWITTER: akamauru \nYOUTUBE: svaxyy",
+
+
+    "state": "free bot",
+    "large_text": "TWITTER: akamauru",
+    "small_text": "IG: lenny.hii for OWN BOT",
+    "client_max_dc_count": "16"
+}
