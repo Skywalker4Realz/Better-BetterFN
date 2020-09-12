@@ -179,7 +179,7 @@ def check_if_process_running(name: str) -> bool:
 
 device_auth_details = get_device_auth_details().get(data['email'], {})
 
-prefix = '!'
+prefix = (data['prefix'])
 
 client = commands.Bot(
     command_prefix=prefix,
@@ -198,7 +198,8 @@ client = commands.Bot(
 
 @client.event
 async def event_party_member_join(member: fortnitepy.PartyMember) -> None:
-    await client.party.send(f"Welcome {member.display_name}. \nI'm a Lobby Bot by Svaxyy. \nDiscord: https://discord.gg/fQB9jju . \nINSTAGRAM: lenny.hii \nTWITTER: akamauru \nYOUTUBE: svaxyy")
+    await BenBotAsync.set_default_loadout(client, data, member)
+    await client.party.send(data['joinmessage'])
 
 
 @client.event
